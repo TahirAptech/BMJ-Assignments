@@ -24,7 +24,9 @@ const loginAccount = _ => {
 
     console.log(arrObj)
     let indexVal = arrObj.findIndex((arr)=>{
-        return arr.email === uemail && arr.password === upassword
+        debugger
+        const aa=  arr.email === uemail && arr.password === upassword;
+        return aa;
     });
 
     if(indexVal !== -1){
