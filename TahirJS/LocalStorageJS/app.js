@@ -1,32 +1,62 @@
 const createAccount = () => 
 {
-    uname = document.getElementById("uname");
-    age = document.getElementById("uage");
-    cource = document.getElementById("ucource");
-    uemail = document.getElementById("uemail");
-    upassword = document.getElementById("upassword");
+    debugger
     let arrObj = JSON.parse(localStorage.getItem("user1")) || [];
-    const obj1 = {
-        username : uname.value,
-        age : age.value,
-        cource : cource.value,
-        email : uemail.value,
-        password : upassword.value
+    const uemail = document.getElementById("uemail");
+    const uname = document.getElementById("uname");
+    const age = document.getElementById("uage");
+    const cource = document.getElementById("ucource");
+    const upassword = document.getElementById("upassword");
+   
+    if(uname.value === "")
+    {
+        alert("Username field cannot be empty!");
     }
-    arrObj.push(obj1);
-    localStorage.setItem("user1", JSON.stringify(arrObj));
-    localStorage.setItem("Current_User",JSON.stringify(obj1));
-    alert("Successfully Registered.");
-    window.location.assign("./Dashboard.html");
+    else if(age.value === "")
+    {
+        alert("Age field cannot be empty!");
+    }
+    else if(cource.value === "")
+    {
+        alert("Cource field cannot be empty!");
+    }
+    else if(uemail.value === "")
+    {
+        alert("Email address cannot be empty!");
+    }
+    else if(upassword.value === "")
+    {
+        alert("Password field cannot be empty!");
+    }
+    else
+    {
+        let isEmailExist = arrObj.find(x => x.email === uemail.value)
+        if(arrObj.length === 0 || isEmailExist === undefined)
+        {
+            const obj1 = {
+                username : uname.value,
+                age : age.value,
+                cource : cource.value,
+                email : uemail.value,
+                password : upassword.value
+            }
+            arrObj.push(obj1);
+            localStorage.setItem("user1", JSON.stringify(arrObj));
+            localStorage.setItem("Current_User",JSON.stringify(obj1));
+            alert("Successfully Registered.");
+            window.location.assign("./Dashboard.html");
+        }
+        else
+        {
+            alert("Email address already exist!");
+        }
+    }
 }
 
 const loginAccount = _ => {
     const uemail = document.getElementById("uemail").value;
     const upassword = document.getElementById("upassword").value;
-    const arrObj = JSON.parse(localStorage.getItem("user1"));
-
-    console.log(arrObj)
-    debugger
+    const arrObj = JSON.parse(localStorage.getItem("user1")) || [];
 
     //Example 1:
     // let arrfunc_find = arr => {
@@ -45,7 +75,7 @@ const loginAccount = _ => {
 
     if(indexValue){
         localStorage.setItem("Current_User",JSON.stringify(indexValue))
-        alert("Login Successfull.");
+      //  alert("Login Successfull.");
         window.location.assign("./Dashboard.html");
     }
     else{
@@ -53,7 +83,7 @@ const loginAccount = _ => {
     }
 }
 
-const Logout = () => {
+const Logout = _ => {
     localStorage.removeItem("Current_User")
     window.location.assign("./Login.html");
 }

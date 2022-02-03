@@ -5,22 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
+    <style>
+        input{
+                font-size: medium;
+                padding: 7px;
+        }
+        h1, h3, h4{
+           display: inline; 
+           color: #000;
+           font-family: sans-serif;
+           text-align: center;
+        }
+    </style>
 </head>
 <body style="text-align: center;">
-    <h1>SignUp</h2>
-    <input type="text" name="uname" id="uname" placeholder="Username"/>
     <br/><br/>
-    <input type="text" name="uage" id="uage" placeholder="Age"/>
-    <br/><br/>
-    <input type="text" name="ucource" id="ucource" placeholder="Cource"/>
-    <br/><br/>
-    <input type="email" name="uemail" id="uemail" placeholder="Email Address"/>
-    <br><br>
-    <input type="password" name="upassword" id="upassword" placeholder="Password"/>
-    <br><br>
-    <button onclick="createAccount()">SignUp</button>
 
-    <button onclick="window.location.assign('./Login.html')">Goto Login</button>
+    <h1>Register your account</h2>
+        <br/><br/><br/><br/>
+
+            <input type="text" name="uname" id="uname" placeholder="Username" required/>
+            <br/><br/>
+            <input type="text" name="uage" id="uage" placeholder="Age" required/>
+            <br/><br/>
+            <input type="text" name="ucource" id="ucource" placeholder="Cource" required/>
+            <br/><br/>
+            <input type="email" name="uemail" id="uemail" placeholder="Email Address" required/>
+            <br><br>
+            <input type="password" name="upassword" id="upassword" placeholder="Password" required/>
+            <br><br>
+            <!-- <button onclick="createAccount()">SignUp</button> -->
+            <input type="button" onclick="createAccount()" value="SignUp"/>
+    
+<br>
+<br>
+<input type="button" onclick="window.location.assign('./Login.html')" value="Goto Login"/>
 </body>
 <script src="app.js"></script>
 </html>
