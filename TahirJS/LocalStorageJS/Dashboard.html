@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Local Storage</title>
+    <style>
+        h3, h4{
+           display: inline; 
+           color: #000;
+           font-family: sans-serif;
+           text-align: center;
+        }
+        h3{
+            color: #585858;
+        }
+    </style>
+</head>
+<body onload="loadHome()" style="text-align: center;">
+    <h1>Dashboard</h1>
+    <div>
+        <h3>Name:</h3>
+        <h4 id="dname"></h3>
+    </div>
+    <br>
+    <div>
+        <h3>Age:</h3>
+        <h4 id="dage"></h3>
+    </div>
+    <br>
+    <div>
+        <h3>Cource:</h3>
+        <h4 id="dcource"></h3>
+    </div>
+    <br>
+    <div>
+        <h3>Email:</h3>
+        <h4 id="demail"></h3>
+    </div>
+    <br>
+<button onclick="Logout()">Logout</button>
+    <script src="app.js"></script>
+</body>
+</html>

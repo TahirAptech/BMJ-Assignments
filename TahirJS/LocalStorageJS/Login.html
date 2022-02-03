@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Local Storage</title>
 </head>
-<body>
-    
-    <h2>Login</h2>
-<input type="email" name="uemail" id="uemail" placeholder="Email Address">
-<br>
-<br>
-<input type="password" name="upassword" id="upassword" placeholder="Password">
-<br><br>
-<button onclick="loginAccount()">Login</button>
-<script src="app.js"></script>
+<body style="text-align: center;">
+    <h1>Login</h2>
+    <input type="email" name="uemail" id="uemail" placeholder="Email Address">
+    <br>
+    <br>
+    <input type="password" name="upassword" id="upassword" placeholder="Password">
+    <br><br>
+    <button onclick="loginAccount()">Login</button>
+    <button onclick="window.location.assign('./index.html')">Goto Signup</button>
+
+    <script src="app.js"></script>
 </body>
 </html>

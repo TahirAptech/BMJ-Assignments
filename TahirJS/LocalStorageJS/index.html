@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
 </head>
-<body>
-    <h2>SignUp</h2>
+<body style="text-align: center;">
+    <h1>SignUp</h2>
     <input type="text" name="uname" id="uname" placeholder="Username"/>
+    <br/><br/>
+    <input type="text" name="uage" id="uage" placeholder="Age"/>
+    <br/><br/>
+    <input type="text" name="ucource" id="ucource" placeholder="Cource"/>
     <br/><br/>
     <input type="email" name="uemail" id="uemail" placeholder="Email Address"/>
     <br><br>
     <input type="password" name="upassword" id="upassword" placeholder="Password"/>
-<br><br>
-<button onclick="createAccount()">SignUp</button>
+    <br><br>
+    <button onclick="createAccount()">SignUp</button>
+
+    <button onclick="window.location.assign('./Login.html')">Goto Login</button>
 </body>
 <script src="app.js"></script>
 </html>
