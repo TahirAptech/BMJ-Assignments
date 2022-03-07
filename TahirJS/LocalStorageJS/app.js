@@ -54,6 +54,7 @@ const createAccount = () =>
 }
 
 const loginAccount = _ => {
+    debugger
     const uemail = document.getElementById("uemail").value;
     const upassword = document.getElementById("upassword").value;
     const arrObj = JSON.parse(localStorage.getItem("user1")) || [];
@@ -63,19 +64,20 @@ const loginAccount = _ => {
     //     debugger
     //     return arr.email === uemail && arr.password === upassword;
     // }
-    // let indexVal = arrObj.find(arrfunc_find);
+    // let indexValue = arrObj.find(arrfunc_find);
 
     //Example 2:
-    let indexValue = arrObj.find(x => x.email == uemail && x.password == upassword);
+    //let indexValue = arrObj.find(x => x.email == uemail && x.password == upassword);
 
     //Example 3:
-    // let indexVal = arrObj.find(function(x){
-    //     return x.email == uemail && x.password == upassword
-    // });
+    
+    let indexValue = arrObj.find(function(x){
+        //let aa = x.email == uemail && x.password == upassword
+        return x;
+    });
 
     if(indexValue){
         localStorage.setItem("Current_User",JSON.stringify(indexValue))
-      //  alert("Login Successfull.");
         window.location.assign("./Dashboard.html");
     }
     else{
@@ -96,3 +98,26 @@ const loadHome = _ => {
     document.getElementById("dcource").innerHTML  = obj.cource;
     document.getElementById("demail").innerHTML  = obj.email;
 } 
+
+const myPrototypeFunction = () =>
+{
+    let Mobile = function(model, price)  {
+       // constructor(model, price)
+        {
+            this.model = model,
+            this.price = price;
+        }
+    }
+    let samsung = new Mobile("S8",30000);
+    let iPhone = new Mobile("iPhone 7",45000);
+ //   samsung.Color = "Black";
+    Mobile.prototype.Color = "Blue";
+    console.log(Mobile);
+  // let arr = [1,2,"Tahir",{name:"Yasir"}];
+   // console.log(arr);
+
+
+   // console.log(samsung);
+   // console.log(iPhone);
+  //  console.log(samsung.Color);
+}
